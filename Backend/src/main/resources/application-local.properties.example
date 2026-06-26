@@ -1,0 +1,10 @@
+# Example Local credentials for CreatorHub development
+# Copy this file to application-local.properties and fill in your actual credentials.
+# Do NOT commit application-local.properties to Git!
+
+# Database local password
+spring.datasource.password=your_database_password_here
+
+# Razorpay local keys
+razorpay.key.id=your_razorpay_key_id_here
+razorpay.key.secret=your_razorpay_key_secret_here

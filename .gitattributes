@@ -1,0 +1,2 @@
+# Exclude frontend directory from GitHub language stats so Java is shown as the primary language
+frontend/** linguist-detectable=false
