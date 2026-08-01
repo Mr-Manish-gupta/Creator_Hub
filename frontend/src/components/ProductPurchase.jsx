@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { api } from '../util/api';
 
-
 const ProductPurchase = ({ productId, amount, buyerId, productName }) => {
     const [loading, setLoading] = useState(false);
     const [licenseKey, setLicenseKey] = useState("");
@@ -103,21 +102,24 @@ const ProductPurchase = ({ productId, amount, buyerId, productName }) => {
     };
 
     return (
-        <div className="p-4 border rounded shadow-md max-w-sm bg-white">
-            <h2 className="text-xl font-bold mb-2">{productName}</h2>
-            <p className="text-gray-600 mb-4">Price: ₹{amount}</p>
+        <div className="space-y-4 mt-2">
+            <div className="flex items-baseline space-x-2">
+                <span className="text-3xl font-black text-gray-900">₹{amount}</span>
+                <span className="text-gray-400 text-xs font-semibold">one-time payment</span>
+            </div>
             
             <button 
                 onClick={handlePayment} 
                 disabled={loading}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded font-medium w-full disabled:bg-indigo-300 cursor-pointer"
+                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-sm transition-all duration-200 disabled:bg-indigo-300 flex items-center justify-center space-x-2 text-sm cursor-pointer"
             >
                 {loading ? "Processing..." : "Buy Now"}
             </button>
 
             {licenseKey && (
-                <div className="mt-4 p-2 bg-green-100 border border-green-400 text-green-800 rounded">
-                    <strong>License Key:</strong> {licenseKey}
+                <div className="mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl animate-in fade-in duration-300">
+                    <strong className="block text-xs uppercase tracking-wider text-emerald-600 mb-1">Your License Key:</strong>
+                    <code className="block bg-white border border-emerald-100 text-center font-mono font-bold py-2 rounded-lg text-emerald-950 tracking-wider select-all">{licenseKey}</code>
                 </div>
             )}
         </div>

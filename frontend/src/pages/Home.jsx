@@ -38,7 +38,7 @@ const Home = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-4 md:px-6">
       
       {/* Discover Banner */}
       <div className="text-center py-12 px-4 bg-white rounded-3xl border border-gray-150 shadow-sm mb-12">

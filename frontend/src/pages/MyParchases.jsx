@@ -56,7 +56,7 @@ const MyPurchases = () =>{
   }
 
   return(
-    <div className="max-w-4xl mx-auto py-6 px2">
+    <div className="max-w-4xl mx-auto py-6 px-4 md:px-6">
         <div className="flex items-center jutify-between mb-8 pb-4 border-b border-gray-200">
             <div>
               <h1 className="text-3xl font-extrabold text-gray-600 flex items-center space-x-2">

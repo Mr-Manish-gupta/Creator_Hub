@@ -59,7 +59,7 @@ const ProductDetails = () =>{
  }
 
  return (
-    <div className="max-w-4xl mx-auto py-6 px-2">
+    <div className="max-w-4xl mx-auto py-6 px-4 md:px-6">
       
       {/* Back button */}
       <Link to="/" className="flex items-center space-x-2 text-sm font-bold text-gray-500 hover:text-indigo-600 transition-colors mb-6 w-fit">

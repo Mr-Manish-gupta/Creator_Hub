@@ -12,7 +12,7 @@ const ProductCard = ({product}) =>{
         </div>
 
 
-        <div className="p-5 flex-grow flex-flex col justify-between">
+        <div className="p-5 flex-grow flex flex-col justify-between">
           <div>
             <h3 className="font-extrabold text-gray-700 text-lg line-clamp-1 mb-1">
               {product.title}
