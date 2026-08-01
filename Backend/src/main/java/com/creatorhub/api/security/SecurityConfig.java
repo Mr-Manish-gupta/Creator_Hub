@@ -37,7 +37,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource(){    //
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:5173"));  // ye set karta hai ki fronend se ane walli requst ko ho hit kare  matlab hamre react app se ane wali request
+        configuration.setAllowedOrigins(List.of("https://creatorhub-share.netlify.app"));  // ye set karta hai ki fronend se ane walli requst ko ho hit kare  matlab hamre react app se ane wali request
         configuration.setAllowedMethods(Arrays.asList("GET" , "POST", "DELETE", "PUT", "OPTIONS"));    // kis tarha ki method bhej skt hai
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Cache-Control"));  // ye auth toekns ka transfer karne ke permisson deta hai
         configuration.setAllowCredentials(true);
