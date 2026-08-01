@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import { Upload, DollarSign, Lock, CheckCircle, HeartHandshake, Package ,EditIcon } from 'lucide-react';
+import { Upload, DollarSign, Lock, CheckCircle, HeartHandshake, Package, EditIcon } from 'lucide-react';
 
 
 const Dashboard = () => {
@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [myProducts, setMyProducts] = useState([]);
   const [loadingProducts, setLoadingProducts] = useState(true);
 
-   // Edit Modal States (aligned with 'Modal' spelling)
+  // Edit Modal States (aligned with 'Modal' spelling)
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [editTitle, setEditTitle] = useState('');
@@ -52,10 +52,10 @@ const Dashboard = () => {
 
       if (response.ok) {
         const updatedProduct = await response.json(); // 👈 Fixed: lowercase .json()
-        
+
         // Update product in local state instantly without page reload
         setMyProducts(prev => prev.map(p => p.id === updatedProduct.id ? updatedProduct : p));
-        
+
         setIsEditModalOpen(false);
         setEditingProduct(null);
         alert("Product updated successfully!");
@@ -96,7 +96,7 @@ const Dashboard = () => {
 
   const handleFileUpload = async (e) => {
     e.preventDefault();
-    
+
     if (!title || !price || !file) {
       alert("Please fill all mandatory fields!");
       return;
@@ -118,7 +118,7 @@ const Dashboard = () => {
       if (response.ok) {
         const savedProduct = await response.json();
         setUploadMessage(`Product "${savedProduct.title}" successfully uploaded and saved!`);
-        
+
         // Add new product directly to state list to update UI instantly
         setMyProducts(prev => [savedProduct, ...prev]);
 
@@ -139,7 +139,7 @@ const Dashboard = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-8 px-4">
-      
+
       {/* Top Title Section */}
       <div className="mb-8 pb-4 border-b border-gray-200">
         <h1 className="text-3xl font-extrabold text-gray-900">Creator Dashboard</h1>
@@ -181,7 +181,7 @@ const Dashboard = () => {
 
       {/* Upload Section and Guidelines */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
+
         {/* Upload Form */}
         <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
           <h2 className="text-xl font-bold mb-6 text-gray-900 flex items-center space-x-2">
@@ -317,17 +317,17 @@ const Dashboard = () => {
                       {prod.uploadedAt ? new Date(prod.uploadedAt).toLocaleDateString() : 'N/A'}
                     </td>
                     <td className="py-3.5 px-4">
-                  
+
                       <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full uppercase">
                         Live
                       </span>
                     </td>
                     <td className="py-3.5 px-4">
-                       <button
+                      <button
                         onClick={() => openEditModal(prod)}
                         className='text-gray-400 hover:text-indigo-700 cursor-pointer'>
-                      {prod.Edit}
-                      <EditIcon className='w-4 h-4 cursor-pointer'/>
+                        {prod.Edit}
+                        <EditIcon className='w-4 h-4 cursor-pointer' />
                       </button>
                     </td>
                   </tr>
@@ -336,19 +336,20 @@ const Dashboard = () => {
             </table>
           </div>
         ) : (
-          <div className="text-center py-10 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-            <p className="text-gray-500">Aapne abhi tak koi product publish nahi kiya hai.</p>
-          </div>
-        )}
+        <div className="text-center py-10 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+          <p className="text-gray-500">Aapne abhi tak koi product publish nahi kiya hai.</p>
+        </div>
+        )
+      }
       </div>
+  
 
+      {/**Edit product model overlay */}
 
-          {/**Edit product model overlay */}
-              
-      {isEditModalOpen  && (
+      {isEditModalOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-200">
-            
+
             <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center space-x-2">
               <Package className="w-6 h-6 text-indigo-600" />
               <span>Edit Product Details</span>

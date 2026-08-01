@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8085/api/v1.0";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://creator-hub-gkhl.onrender.com";
 export const api = {
     
     PRODUCT_ALL: () => `${BASE_URL}/products/all`,
