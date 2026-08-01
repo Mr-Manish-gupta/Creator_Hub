@@ -38,7 +38,7 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8085/api/v1.0/products/${editingProduct.id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "https://creator-hub-gkhl.onrender.com"}/api/v1.0/products/${editingProduct.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -80,7 +80,7 @@ const Dashboard = () => {
     const fetchMyProducts = async () => {
       if (!user) return;
       try {
-        const response = await fetch(`http://localhost:8085/api/v1.0/products/creator/${user.id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "https://creator-hub-gkhl.onrender.com"}/api/v1.0/products/creator/${user.id}`);
         if (response.ok) {
           const data = await response.json();
           setMyProducts(data);
@@ -110,7 +110,7 @@ const Dashboard = () => {
       formData.append("creatorId", user.id); // Clerk User ID mapping
       formData.append("file", file); // File binary upload
 
-      const response = await fetch("http://localhost:8085/api/v1.0/products/upload", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "https://creator-hub-gkhl.onrender.com"}/api/v1.0/products/upload`, {
         method: "POST",
         body: formData
       });

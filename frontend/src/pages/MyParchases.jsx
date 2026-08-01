@@ -107,7 +107,7 @@ const MyPurchases = () =>{
                                {/* Download Button */}
                 <div className="flex md:flex-col gap-3 w-full md:w-auto">
                   <a
-                    href={`http://localhost:8085/api/v1.0/products/download/${item.productId}?buyerId=${user.primaryEmailAddress?.emailAddress}`}
+                    href={`${import.meta.env.VITE_API_BASE_URL || "https://creator-hub-gkhl.onrender.com"}/api/v1.0/products/download/${item.productId}?buyerId=${user.primaryEmailAddress?.emailAddress}`}
                     download
                     className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-3 rounded-xl shadow-sm transition-colors flex items-center justify-center space-x-2 text-sm w-full md:w-40"
                   >
