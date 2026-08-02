@@ -46,10 +46,10 @@ const ProductPurchase = ({ productId, amount, buyerId, productName }) => {
 
             // Step 2: Open Razorpay
             const options = {
-                key: "rzp_test_SyhyMslzCo2vDT", 
+                key: import.meta.env.VITE_RAZORPAY_KEY, 
                 amount: amount * 100, 
                 currency: "INR",
-                name: "CreatorHub Store",
+                name: "ShareDoc Store",
                 description: `Purchase for ${productName}`,
                 order_id: orderData.orderId,
                 handler: async function (response) {

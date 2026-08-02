@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, LayoutDashboard, Download, Library, Menu, X } from 'lucide-react';
+import { FileText, LayoutDashboard, Download, Library, Menu, X } from 'lucide-react';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
@@ -16,8 +16,8 @@ const Navbar = () => {
          
          {/* Brand Logo */}
          <Link to="/" className="flex items-center space-x-2 text-indigo-600 font-extrabold text-xl md:text-2xl tracking-wide shrink-0">
-            <ShoppingBag className="w-6 h-6 md:w-8 md:h-8" />
-            <span> Creator <span className="text-gray-800">Hub</span> </span>
+            <FileText className="w-6 h-6 md:w-8 md:h-8" />
+            <span> Share <span className="text-gray-800">Doc</span> </span>
          </Link>
 
          {/* Desktop Navigation */}

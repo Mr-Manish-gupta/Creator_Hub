@@ -12,13 +12,13 @@ const GuestLanding = () => {
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between mb-12">
         <div className="mb-6 md:mb-0 md:max-w-xl">
           <span className="bg-indigo-500 bg-opacity-25 text-indigo-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-            Explore CreatorHub
+            Explore ShareDoc
           </span>
           <h1 className="text-4xl md:text-5xl font-black mt-4 tracking-tight leading-tight">
             Apne Digital Products Bechein Aur Earn Karin!
           </h1>
           <p className="mt-4 text-indigo-100 text-lg">
-            CreatorHub ek digital marketplace aur licensing platform hai jahan creators apne codes, scripts aur templates secure bechte hain aur buyers automatic license keys pate hain.
+            ShareDoc ek digital marketplace aur licensing platform hai jahan creators apne codes, scripts aur templates secure bechte hain aur buyers automatic license keys pate hain.
           </p>
         </div>
         <div>

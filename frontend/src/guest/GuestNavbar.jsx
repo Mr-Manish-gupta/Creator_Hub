@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { SignInButton } from '@clerk/clerk-react';
 
 const GuestNavbar = () => {
@@ -9,8 +9,8 @@ const GuestNavbar = () => {
         
         {/* Logo */}
         <div className="flex items-center space-x-2 text-indigo-600 font-extrabold text-xl md:text-2xl tracking-wide">
-          <ShoppingBag className="w-6 h-6 md:w-8 md:h-8" />
-          <span>Creator<span className="text-gray-800">Hub</span></span>
+          <FileText className="w-6 h-6 md:w-8 md:h-8" />
+          <span>Share<span className="text-gray-800">Doc</span></span>
         </div>
 
         {/* Login Button */}
